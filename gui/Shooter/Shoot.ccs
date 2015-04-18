@@ -1,0 +1,20 @@
+<Solution>
+  <PropertyGroup Name="Shoot" Version="2.2.1.0" Type="CocosStudio" />
+  <SolutionFolder>
+    <Group ctype="ResourceGroup">
+      <RootFolder Name=".">
+        <Project Name="MainScene.csd" Type="Scene" />
+        <Image Name="button1-hd.png" />
+        <Image Name="button1_on-hd.png" />
+        <Image Name="button1_off-hd.png" />
+        <Image Name="myship.png" />
+        <Project Name="MainGameLayer.csd" Type="Layer" />
+        <Project Name="GameOverDialog.csd" Type="Layer" />
+        <Image Name="blue_button-on.png" />
+        <Image Name="blue_button-off.png" />
+        <Image Name="blue_boxCheckmark.png" />
+        <Image Name="red_boxCross.png" />
+      </RootFolder>
+    </Group>
+  </SolutionFolder>
+</Solution>
