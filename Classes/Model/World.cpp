@@ -143,6 +143,8 @@ void World::checkBulletCollision()
 			
 			if(bulletBound.intersectsRect(shipBound)) {
 				hitEnemy.pushBack(ship);
+				bullet->removeFromParent();
+				mMyBullets.eraseObject(bullet);
 				break;
 			}
 		}
@@ -175,6 +177,11 @@ void World::checkBulletCollision()
 // Level 2: 0 0 A N N A 0 0
 void World::generateLevel(int level)
 {
+
+	
+	spawnMyShip();
+	
+	// Create Enemies;
 	removeAllEnemies();
 	
 	Vector<EnemyShip *> shipList;
@@ -233,11 +240,16 @@ void World::handleMyShipMove()
 
 void World::spawnMyShip()
 {
-	Size size = this->getContentSize();
-	Vec2 pos = Vec2(size.width / 2, 50);
-	
-	MyShip *ship = MyShip::create();
-	addShip(ship, pos);
+	MyShip *ship;
+	if(mMyShip != nullptr) {
+		ship = mMyShip;
+	} else {
+		Size size = this->getContentSize();
+		Vec2 pos = Vec2(size.width / 2, 50);
+		
+		ship = MyShip::create();
+		addShip(ship, pos);
+	}
 	
 	ship->setAutoFire(mState == WorldState::Running ? true : false);
 }
@@ -287,12 +299,17 @@ void World::removeEnemyShip(EnemyShip *ship)
 	sendEvent(event);
 	
 	
-	if(mEnemies.size() == 0) {
-		mState = WorldState::WaitForNextLevel;
-		mMyShip->setAutoFire(false);
-		
-		sendEvent(WorldEvent::LevelClear);
+	if(mEnemies.size() > 0) {
+		return;
 	}
+	
+	// Wait for Next Level
+	mState = WorldState::WaitForNextLevel;
+	if(mMyShip != nullptr) {
+		mMyShip->setAutoFire(false);
+	}
+	
+	sendEvent(WorldEvent::LevelClear);
 }
 
 void World::removeShip(Ship *ship)

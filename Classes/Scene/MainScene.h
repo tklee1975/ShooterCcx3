@@ -35,6 +35,13 @@ public:
 private:
 	void setupUI(Node *mainPanel);
 	void startGame();
+	
+	virtual void onEnter();
+	
+	void updateBestScore();
+	
+private:
+	Text *mBestScoreText;
 };
 
 #endif /* defined(__Shooter__MainScene__) */

@@ -19,6 +19,7 @@
 // Game
 #include "MainGameLayer.h"
 
+#include "GameData.h"
 
 Scene* MainSceneLayer::createScene()
 {
@@ -65,14 +66,27 @@ void MainSceneLayer::setupUI(cocos2d::Node *mainPanel)
 	
 //	// Bind node to corresponding class variable
 	Button *startButton = (Button *) mainPanel->getChildByName("buttonStart");
-//	mPlayerButton = (Button *)node;
-	if(startButton != NULL) {
+	if(startButton != nullptr) {
 		startButton->addClickEventListener([parent](Ref *) {
 			parent->startGame();
 		});
 	}
 	
-//	mLifeText = (Text *)node;
+	mBestScoreText = (Text *) mainPanel->getChildByName("bestScoreText");
+	updateBestScore();
+}
+
+void MainSceneLayer::updateBestScore()
+{
+	if(mBestScoreText == nullptr) {
+		return;
+	}
+	
+	char temp[100];
+	
+	sprintf(temp, "Best Score: %d", GameData::instance()->getBestScore());
+	
+	mBestScoreText->setString(temp);
 }
 
 void MainSceneLayer::startGame() {
@@ -82,3 +96,9 @@ void MainSceneLayer::startGame() {
 }
 
 
+void MainSceneLayer::onEnter()
+{
+	Layer::onEnter();
+	//
+	updateBestScore();
+}

@@ -44,22 +44,22 @@
             <PrePosition X="0.1137" Y="0.9681" />
             <PreSize X="0.0000" Y="0.0000" />
           </NodeObjectData>
-          <NodeObjectData Name="scoreLabel" ActionTag="-1585772188" FrameEvent="" Tag="18" LeftMargin="207.7921" RightMargin="62.2079" TopMargin="9.1045" BottomMargin="540.8955" FontSize="16" LabelText="Score: " ctype="TextObjectData">
-            <Position X="232.7921" Y="549.8955" />
+          <NodeObjectData Name="scoreLabel" ActionTag="-1585772188" FrameEvent="" Tag="18" LeftMargin="199.7917" RightMargin="74.2083" TopMargin="10.9797" BottomMargin="539.0203" FontSize="16" LabelText="Score:" ctype="TextObjectData">
+            <Position X="222.7917" Y="548.0203" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <CColor A="255" R="249" G="250" B="132" />
-            <Size X="50.0000" Y="18.0000" />
-            <PrePosition X="0.7275" Y="0.9681" />
+            <Size X="46.0000" Y="18.0000" />
+            <PrePosition X="0.6962" Y="0.9648" />
             <PreSize X="0.0000" Y="0.0000" />
           </NodeObjectData>
-          <NodeObjectData Name="scoreText" ActionTag="-1833155287" FrameEvent="" Tag="19" LeftMargin="233.5630" RightMargin="6.4370" TopMargin="8.6047" BottomMargin="538.3953" IsCustomSize="True" FontSize="16" LabelText="12,345" HorizontalAlignmentType="HT_Right" ctype="TextObjectData">
-            <Position X="273.5630" Y="548.8953" />
+          <NodeObjectData Name="scoreText" ActionTag="-1833155287" FrameEvent="" Tag="19" LeftMargin="231.0627" RightMargin="8.9373" TopMargin="9.4797" BottomMargin="537.5203" IsCustomSize="True" FontSize="16" LabelText="12,345" HorizontalAlignmentType="HT_Right" ctype="TextObjectData">
+            <Position X="271.0627" Y="548.0203" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <CColor A="255" R="255" G="255" B="255" />
             <Size X="80.0000" Y="21.0000" />
-            <PrePosition X="0.8549" Y="0.9664" />
+            <PrePosition X="0.8471" Y="0.9648" />
             <PreSize X="0.2500" Y="0.0370" />
           </NodeObjectData>
           <NodeObjectData Name="levelText" ActionTag="-695591485" FrameEvent="" Tag="20" LeftMargin="83.0000" RightMargin="83.0000" TopMargin="241.0000" BottomMargin="273.0000" FontSize="48" LabelText="Level 1" ctype="TextObjectData">

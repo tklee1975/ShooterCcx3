@@ -12,8 +12,13 @@
 #include "extensions/cocos-ext.h"
 #include "ui/CocosGUI.h"
 #include "cocostudio/CocoStudio.h"
-
+#include "GameOverDialog.h"
 #include "World.h"
+#include "GameData.h"
+
+#define PLAYER_LIFE		3
+#define SCORE1			1
+#define SCORE2			2
 
 using namespace cocostudio::timeline;
 
@@ -44,7 +49,8 @@ bool MainGameLayer::init()
 	{
 		return false;
 	}
-	mWorld = NULL;
+	mWorld = nullptr;
+	mDialog = nullptr;
 	
 	mCurrentLevel = 1;
 
@@ -56,9 +62,11 @@ bool MainGameLayer::init()
 	setupWorld();	// should be after setupUI
 	
 	
+	mIsGameOver = true;
+	
 	//
 	setScore(0);
-	setLife(5);
+	setLife(PLAYER_LIFE);
 	hideLevelBanner();
 
 	return true;
@@ -118,9 +126,9 @@ void MainGameLayer::setLife(int life)
 	mLifeText->setString(temp);
 }
 
-void MainGameLayer::setScore(int life)
+void MainGameLayer::setScore(int score)
 {
-	mScore = life;
+	mScore = score;
 	if(mScoreText == NULL) {
 		return;
 	}
@@ -178,6 +186,12 @@ void MainGameLayer::startLevel(int level)
 		return;
 	}
 	
+	if(level == 1) {
+		setScore(0);
+	}
+	
+	mIsGameOver = false;
+	
 	mCurrentLevel = level;
 	
 	mWorld->generateLevel(mCurrentLevel);
@@ -194,7 +208,13 @@ void MainGameLayer::handlePlayerDie()
 	
 	setLife(newLife);
 	
-	mWorld->spawnMyShip();
+	if(newLife > 0) {
+		mWorld->spawnMyShip();
+	} else {
+		// This is Game Over case
+		GameData::instance()->setScore(mScore);
+		showGameOverDialog();
+	}
 }
 
 void MainGameLayer::increaseScore(int addScore)
@@ -212,6 +232,10 @@ void MainGameLayer::startNewLevel()
 
 void MainGameLayer::handleCallback(Ref *ref, World::WorldEvent event)
 {
+	if(mIsGameOver) {		// No need to handle any if game is overed
+		return;
+	}
+	
 	switch(event) {
 		case World::WorldEvent::PlayerDie:
 		{
@@ -221,13 +245,13 @@ void MainGameLayer::handleCallback(Ref *ref, World::WorldEvent event)
 			
 		case World::WorldEvent::HitMonster1:
 		{
-			increaseScore(100);
+			increaseScore(SCORE1);
 			break;
 		}
 
 		case World::WorldEvent::HitMonster2:
 		{
-			increaseScore(200);
+			increaseScore(SCORE2);
 			break;
 		}
 			
@@ -237,5 +261,38 @@ void MainGameLayer::handleCallback(Ref *ref, World::WorldEvent event)
 			break;
 		}
 	}
+}
+
+void MainGameLayer::showGameOverDialog()
+{
+	GameOverDialog *dialog = GameOverDialog::create();
+	
+	addChild(dialog);
+	
+	dialog->setOKListener(CC_CALLBACK_1(MainGameLayer::onOK, this));
+	dialog->setCancelListener(CC_CALLBACK_1(MainGameLayer::onCancel, this));
+	
+	mDialog = dialog;
+}
+
+
+void MainGameLayer::onOK(Ref *sender)
+{
+	log("OK button is clicked");
+	
+	if(mDialog != nullptr) {
+		mDialog->removeFromParent();
+	}
+	
+	setLife(PLAYER_LIFE);
+	startLevel(1);
+	
+	
+}
+
+void MainGameLayer::onCancel(Ref *sender)
+{
+	log("Cancel button is clicked");
+	Director::getInstance()->popToRootScene();
 }
 

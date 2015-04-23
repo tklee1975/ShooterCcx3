@@ -10,8 +10,8 @@
 #include "MyBullet.h"
 #include "World.h"
 
-#define kSpeed 100
-#define kFireInterval	0.3
+#define kSpeed			110
+#define kFireInterval	0.5
 
 
 

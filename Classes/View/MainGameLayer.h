@@ -50,6 +50,9 @@ private:
 	void handlePlayerDie();
 	void increaseScore(int addScore);
 	void startNewLevel();
+	void showGameOverDialog();
+	void onOK(Ref *sender);
+	void onCancel(Ref *sender);
 
 private:	// private members
 	Text *mScoreText;
@@ -58,10 +61,13 @@ private:	// private members
 	Node *mWorldPanel;
 	World *mWorld;
 	
+	Node *mDialog;
+	
 	//
 	int mScore;
 	int mLife;
 	int mCurrentLevel;
+	bool mIsGameOver;
 };
 
 #endif /* defined(__Shooter__MainGameLayer__) */

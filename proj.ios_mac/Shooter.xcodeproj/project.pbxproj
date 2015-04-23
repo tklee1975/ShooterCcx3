@@ -122,6 +122,8 @@
 		73491FC21AD76C2600991926 /* ActionTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 73491FBF1AD76C2600991926 /* ActionTest.cpp */; };
 		73494E7D1ACFF38900C3DA69 /* EnemyBullet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 73494E7B1ACFF38900C3DA69 /* EnemyBullet.cpp */; };
 		73494E7E1ACFF38900C3DA69 /* EnemyBullet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 73494E7B1ACFF38900C3DA69 /* EnemyBullet.cpp */; };
+		735C91801AE8733000707ECB /* GameData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 735C917E1AE8733000707ECB /* GameData.cpp */; };
+		735C91811AE8733000707ECB /* GameData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 735C917E1AE8733000707ECB /* GameData.cpp */; };
 		736A79D51ADEDF5000C69FFE /* GeometryTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 736A79D31ADEDF5000C69FFE /* GeometryTest.cpp */; };
 		736A79D61ADEDF5000C69FFE /* GeometryTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 736A79D31ADEDF5000C69FFE /* GeometryTest.cpp */; };
 		73A531E61A8683D000EA667E /* ParticleTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 73A531E41A8683D000EA667E /* ParticleTest.cpp */; };
@@ -140,6 +142,10 @@
 		73D0BE2E1AE25F9900971FC0 /* MainScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 73D0BE2B1AE25F9900971FC0 /* MainScene.cpp */; };
 		73D0BE341AE260FB00971FC0 /* MainLayerTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 73D0BE321AE260FB00971FC0 /* MainLayerTest.cpp */; };
 		73D0BE351AE260FB00971FC0 /* MainLayerTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 73D0BE321AE260FB00971FC0 /* MainLayerTest.cpp */; };
+		73D0BE381AE2DA8300971FC0 /* GameOverDialog.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 73D0BE361AE2DA8300971FC0 /* GameOverDialog.cpp */; };
+		73D0BE391AE2DA8300971FC0 /* GameOverDialog.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 73D0BE361AE2DA8300971FC0 /* GameOverDialog.cpp */; };
+		73D0BE3C1AE2DBA300971FC0 /* GameOverDialogTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 73D0BE3A1AE2DBA300971FC0 /* GameOverDialogTest.cpp */; };
+		73D0BE3D1AE2DBA300971FC0 /* GameOverDialogTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 73D0BE3A1AE2DBA300971FC0 /* GameOverDialogTest.cpp */; };
 		73DDB08C1A87C1D000C49E66 /* MyShip.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 73DDB08A1A87C1D000C49E66 /* MyShip.cpp */; };
 		73DDB08D1A87C1D000C49E66 /* MyShip.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 73DDB08A1A87C1D000C49E66 /* MyShip.cpp */; };
 		73F51FF91AD93E3200EB8D89 /* CallbackTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 73F51FF71AD93E3200EB8D89 /* CallbackTest.cpp */; };
@@ -289,6 +295,8 @@
 		73491FC01AD76C2600991926 /* ActionTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionTest.h; sourceTree = "<group>"; };
 		73494E7B1ACFF38900C3DA69 /* EnemyBullet.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = EnemyBullet.cpp; path = Model/EnemyBullet.cpp; sourceTree = "<group>"; };
 		73494E7C1ACFF38900C3DA69 /* EnemyBullet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EnemyBullet.h; path = Model/EnemyBullet.h; sourceTree = "<group>"; };
+		735C917E1AE8733000707ECB /* GameData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GameData.cpp; path = Manager/GameData.cpp; sourceTree = "<group>"; };
+		735C917F1AE8733000707ECB /* GameData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameData.h; path = Manager/GameData.h; sourceTree = "<group>"; };
 		736A79D31ADEDF5000C69FFE /* GeometryTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GeometryTest.cpp; sourceTree = "<group>"; };
 		736A79D41ADEDF5000C69FFE /* GeometryTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeometryTest.h; sourceTree = "<group>"; };
 		73A531E41A8683D000EA667E /* ParticleTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ParticleTest.cpp; sourceTree = "<group>"; };
@@ -306,6 +314,10 @@
 		73D0BE2C1AE25F9900971FC0 /* MainScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainScene.h; path = Scene/MainScene.h; sourceTree = "<group>"; };
 		73D0BE321AE260FB00971FC0 /* MainLayerTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MainLayerTest.cpp; sourceTree = "<group>"; };
 		73D0BE331AE260FB00971FC0 /* MainLayerTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainLayerTest.h; sourceTree = "<group>"; };
+		73D0BE361AE2DA8300971FC0 /* GameOverDialog.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GameOverDialog.cpp; path = View/GameOverDialog.cpp; sourceTree = "<group>"; };
+		73D0BE371AE2DA8300971FC0 /* GameOverDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameOverDialog.h; path = View/GameOverDialog.h; sourceTree = "<group>"; };
+		73D0BE3A1AE2DBA300971FC0 /* GameOverDialogTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameOverDialogTest.cpp; sourceTree = "<group>"; };
+		73D0BE3B1AE2DBA300971FC0 /* GameOverDialogTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameOverDialogTest.h; sourceTree = "<group>"; };
 		73DDB08A1A87C1D000C49E66 /* MyShip.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MyShip.cpp; path = Model/MyShip.cpp; sourceTree = "<group>"; };
 		73DDB08B1A87C1D000C49E66 /* MyShip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyShip.h; path = Model/MyShip.h; sourceTree = "<group>"; };
 		73F51FF71AD93E3200EB8D89 /* CallbackTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CallbackTest.cpp; sourceTree = "<group>"; };
@@ -511,6 +523,8 @@
 				731FB2361A83E04B004C56D7 /* Constants.h */,
 				73B944B31AD2CEB6001B32A5 /* EnemyLevelLogic.cpp */,
 				73B944B41AD2CEB6001B32A5 /* EnemyLevelLogic.h */,
+				735C917E1AE8733000707ECB /* GameData.cpp */,
+				735C917F1AE8733000707ECB /* GameData.h */,
 			);
 			name = Logic;
 			sourceTree = "<group>";
@@ -527,6 +541,8 @@
 		73288CBC1A78B04400341D79 /* UnitTest */ = {
 			isa = PBXGroup;
 			children = (
+				73D0BE3A1AE2DBA300971FC0 /* GameOverDialogTest.cpp */,
+				73D0BE3B1AE2DBA300971FC0 /* GameOverDialogTest.h */,
 				73D0BE321AE260FB00971FC0 /* MainLayerTest.cpp */,
 				73D0BE331AE260FB00971FC0 /* MainLayerTest.h */,
 				736A79D31ADEDF5000C69FFE /* GeometryTest.cpp */,
@@ -625,6 +641,8 @@
 			children = (
 				73375D991AD5875B00A66DCA /* MainGameLayer.cpp */,
 				73375D9A1AD5875B00A66DCA /* MainGameLayer.h */,
+				73D0BE361AE2DA8300971FC0 /* GameOverDialog.cpp */,
+				73D0BE371AE2DA8300971FC0 /* GameOverDialog.h */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -801,6 +819,7 @@
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				73DDB08C1A87C1D000C49E66 /* MyShip.cpp in Sources */,
 				73375D9B1AD5875B00A66DCA /* MainGameLayer.cpp in Sources */,
+				73D0BE381AE2DA8300971FC0 /* GameOverDialog.cpp in Sources */,
 				73288CE51A78B04C00341D79 /* TDDMenuTest.cpp in Sources */,
 				73288CDD1A78B04C00341D79 /* SampleTest.cpp in Sources */,
 				73ABF9F01A79C9C9007BDCA7 /* BulletTest.cpp in Sources */,
@@ -809,10 +828,12 @@
 				7323C1BE1A7E8A0B000DBB0A /* StringHelper.cpp in Sources */,
 				73288CE71A78B04C00341D79 /* TDDSubMenu.cpp in Sources */,
 				731FB2371A83E04B004C56D7 /* Constants.cpp in Sources */,
+				73D0BE3C1AE2DBA300971FC0 /* GameOverDialogTest.cpp in Sources */,
 				73D0BE341AE260FB00971FC0 /* MainLayerTest.cpp in Sources */,
 				73375DA21AD588E100A66DCA /* CocosStudioTest.cpp in Sources */,
 				731FB23B1A83E22E004C56D7 /* MyBullet.cpp in Sources */,
 				46880B8A19C43A87006E1F66 /* HelloWorldScene.cpp in Sources */,
+				735C91801AE8733000707ECB /* GameData.cpp in Sources */,
 				73288CDF1A78B04C00341D79 /* TDDData.cpp in Sources */,
 				730E1FEF1A827C0500465F70 /* CustomClassTest.cpp in Sources */,
 				73494E7D1ACFF38900C3DA69 /* EnemyBullet.cpp in Sources */,
@@ -856,6 +877,8 @@
 				73A531E71A8683D000EA667E /* ParticleTest.cpp in Sources */,
 				7323C1CB1A7E90A2000DBB0A /* World.cpp in Sources */,
 				73288CEE1A78B04C00341D79 /* TDDTest.cpp in Sources */,
+				73D0BE391AE2DA8300971FC0 /* GameOverDialog.cpp in Sources */,
+				73D0BE3D1AE2DBA300971FC0 /* GameOverDialogTest.cpp in Sources */,
 				73288CDE1A78B04C00341D79 /* SampleTest.cpp in Sources */,
 				73BC9ED11A7AB573001EF822 /* Ship.cpp in Sources */,
 				730E1FEC1A827BA900465F70 /* MyLayerColor.cpp in Sources */,
@@ -873,6 +896,7 @@
 				73288CC31A78B04400341D79 /* ExampleTest.cpp in Sources */,
 				73288CE01A78B04C00341D79 /* TDDData.cpp in Sources */,
 				731FB2401A845B91004C56D7 /* EnemyShip.cpp in Sources */,
+				735C91811AE8733000707ECB /* GameData.cpp in Sources */,
 				46880B8919C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				73DDB08D1A87C1D000C49E66 /* MyShip.cpp in Sources */,
 				73494E7E1ACFF38900C3DA69 /* EnemyBullet.cpp in Sources */,
