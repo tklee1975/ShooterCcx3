@@ -6,7 +6,8 @@ $(call import-add-path,$(LOCAL_PATH)/../../cocos2d)
 $(call import-add-path,$(LOCAL_PATH)/../../cocos2d/external)
 $(call import-add-path,$(LOCAL_PATH)/../../cocos2d/cocos)
 
-LOCAL_CPPFLAGS := -DENABLE_TDD
+#LOCAL_CPPFLAGS := -DENABLE_TDD
+LOCAL_CPPFLAGS :=
 
 LOCAL_MODULE := cocos2dcpp_shared
 
