@@ -16,6 +16,11 @@
 
 USING_NS_CC;
 
+#define SOUND_FIRE				"shot.mp3"
+#define SOUND_EXPLORE_ME		"me-explode.mp3"
+#define SOUND_EXPLORE_OTHER		"enemy-explode.mp3"
+#define SOUND_LEVEL_COMPLETE	"level-complete.mp3"
+
 class Bullet;
 class Ship;
 class EnemyShip;
@@ -47,6 +52,8 @@ public:
 public:
 	virtual bool init();
 	void reset();
+	void preloadSounds();
+	void playSound(const char *file);
 	
 	virtual void update(float delta) override;
 

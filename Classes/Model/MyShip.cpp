@@ -128,6 +128,8 @@ void MyShip::fire()
 	pos.y += size.height / 2 + 10;
 	
 	mWorld->addBullet(bullet, pos);
+	
+	mWorld->playSound(SOUND_FIRE);
 }
 
 bool MyShip::canCollide() const

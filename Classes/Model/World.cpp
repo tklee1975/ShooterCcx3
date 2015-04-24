@@ -8,6 +8,10 @@
 //
 //
 
+#include "audio/include/SimpleAudioEngine.h"
+using namespace CocosDenshion;
+
+
 #include "World.h"
 #include "StringHelper.h"
 #include "Bullet.h"
@@ -17,6 +21,8 @@
 #include "EnemyBullet.h"
 #include "MyShip.h"
 #include "EnemyLevelLogic.h"
+
+
 
 static World *sInstance = NULL;
 
@@ -47,12 +53,26 @@ bool World::init()
 	}
 	
 	//mCallback = nullptr;
+	preloadSounds();
 	
 	setupTouchListener();
 	setupBounds();
 	mState = WorldState::NotStart;
 	
 	return true;
+}
+
+void World::preloadSounds()
+{
+	SimpleAudioEngine::getInstance()->preloadEffect(SOUND_FIRE);
+	SimpleAudioEngine::getInstance()->preloadEffect(SOUND_EXPLORE_ME);
+	SimpleAudioEngine::getInstance()->preloadEffect(SOUND_EXPLORE_OTHER);
+	SimpleAudioEngine::getInstance()->preloadEffect(SOUND_LEVEL_COMPLETE);
+}
+
+void World::playSound(const char *file)
+{
+	SimpleAudioEngine::getInstance()->playEffect(file);
 }
 
 void World::setupBounds()
@@ -284,6 +304,8 @@ void World::removeMyShip(MyShip *ship)
 		return;
 	}
 	
+	playSound(SOUND_EXPLORE_ME);
+	
 	setMyShip(NULL);
 	removeChild(ship);
 	sendEvent(WorldEvent::PlayerDie);
@@ -294,6 +316,8 @@ void World::removeEnemyShip(EnemyShip *ship)
 	mEnemies.eraseObject(ship);
 	removeChild(ship);
 	
+	playSound(SOUND_EXPLORE_OTHER);
+	
 	WorldEvent event = ship->getEnemyType() == EnemyShip::EnemyType::Angry ?
 							WorldEvent::HitMonster2 : WorldEvent::HitMonster1;
 	sendEvent(event);
@@ -302,6 +326,9 @@ void World::removeEnemyShip(EnemyShip *ship)
 	if(mEnemies.size() > 0) {
 		return;
 	}
+	
+	// Level end
+	playSound(SOUND_LEVEL_COMPLETE);
 	
 	// Wait for Next Level
 	mState = WorldState::WaitForNextLevel;

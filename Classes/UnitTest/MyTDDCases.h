@@ -27,6 +27,7 @@
 #include "GeometryTest.h"
 #include "MainLayerTest.h"
 #include "GameOverDialogTest.h"
+#include "SoundTest.h"
 
 //#include#
 // NOTE!!! The above line is used to generate new unit test, must not be removed.
@@ -36,6 +37,7 @@ TDD_CASES
 {
 	
 	TEST(MainLayerTest),
+	TEST(SoundTest),
 	TEST(GameOverDialogTest),
 	TEST(ActionTest),
 	TEST(GeometryTest),

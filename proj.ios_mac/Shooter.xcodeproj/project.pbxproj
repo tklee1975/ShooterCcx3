@@ -146,6 +146,10 @@
 		73D0BE391AE2DA8300971FC0 /* GameOverDialog.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 73D0BE361AE2DA8300971FC0 /* GameOverDialog.cpp */; };
 		73D0BE3C1AE2DBA300971FC0 /* GameOverDialogTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 73D0BE3A1AE2DBA300971FC0 /* GameOverDialogTest.cpp */; };
 		73D0BE3D1AE2DBA300971FC0 /* GameOverDialogTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 73D0BE3A1AE2DBA300971FC0 /* GameOverDialogTest.cpp */; };
+		73D0E49A1AE8CB7000FF3C97 /* sound in Resources */ = {isa = PBXBuildFile; fileRef = 73D0E4991AE8CB7000FF3C97 /* sound */; };
+		73D0E49B1AE8CB7000FF3C97 /* sound in Resources */ = {isa = PBXBuildFile; fileRef = 73D0E4991AE8CB7000FF3C97 /* sound */; };
+		73D0E4A01AE8CB9D00FF3C97 /* SoundTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 73D0E49E1AE8CB9D00FF3C97 /* SoundTest.cpp */; };
+		73D0E4A11AE8CB9D00FF3C97 /* SoundTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 73D0E49E1AE8CB9D00FF3C97 /* SoundTest.cpp */; };
 		73DDB08C1A87C1D000C49E66 /* MyShip.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 73DDB08A1A87C1D000C49E66 /* MyShip.cpp */; };
 		73DDB08D1A87C1D000C49E66 /* MyShip.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 73DDB08A1A87C1D000C49E66 /* MyShip.cpp */; };
 		73F51FF91AD93E3200EB8D89 /* CallbackTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 73F51FF71AD93E3200EB8D89 /* CallbackTest.cpp */; };
@@ -318,6 +322,9 @@
 		73D0BE371AE2DA8300971FC0 /* GameOverDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameOverDialog.h; path = View/GameOverDialog.h; sourceTree = "<group>"; };
 		73D0BE3A1AE2DBA300971FC0 /* GameOverDialogTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameOverDialogTest.cpp; sourceTree = "<group>"; };
 		73D0BE3B1AE2DBA300971FC0 /* GameOverDialogTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameOverDialogTest.h; sourceTree = "<group>"; };
+		73D0E4991AE8CB7000FF3C97 /* sound */ = {isa = PBXFileReference; lastKnownFileType = folder; path = sound; sourceTree = "<group>"; };
+		73D0E49E1AE8CB9D00FF3C97 /* SoundTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SoundTest.cpp; sourceTree = "<group>"; };
+		73D0E49F1AE8CB9D00FF3C97 /* SoundTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundTest.h; sourceTree = "<group>"; };
 		73DDB08A1A87C1D000C49E66 /* MyShip.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MyShip.cpp; path = Model/MyShip.cpp; sourceTree = "<group>"; };
 		73DDB08B1A87C1D000C49E66 /* MyShip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyShip.h; path = Model/MyShip.h; sourceTree = "<group>"; };
 		73F51FF71AD93E3200EB8D89 /* CallbackTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CallbackTest.cpp; sourceTree = "<group>"; };
@@ -435,6 +442,7 @@
 		46880B7519C43A67006E1F66 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				73D0E4991AE8CB7000FF3C97 /* sound */,
 				73375D9D1AD5881F00A66DCA /* gui */,
 				73A531E81A8684FF00EA667E /* particle */,
 				73288CEF1A78B29000341D79 /* image */,
@@ -541,6 +549,8 @@
 		73288CBC1A78B04400341D79 /* UnitTest */ = {
 			isa = PBXGroup;
 			children = (
+				73D0E49E1AE8CB9D00FF3C97 /* SoundTest.cpp */,
+				73D0E49F1AE8CB9D00FF3C97 /* SoundTest.h */,
 				73D0BE3A1AE2DBA300971FC0 /* GameOverDialogTest.cpp */,
 				73D0BE3B1AE2DBA300971FC0 /* GameOverDialogTest.h */,
 				73D0BE321AE260FB00971FC0 /* MainLayerTest.cpp */,
@@ -763,6 +773,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73D0E49A1AE8CB7000FF3C97 /* sound in Resources */,
 				73288CF01A78B29000341D79 /* image in Resources */,
 				5087E78117EB970100C73F5D /* Icon-120.png in Resources */,
 				5087E78617EB970100C73F5D /* Icon-76.png in Resources */,
@@ -804,6 +815,7 @@
 				73A531EA1A8684FF00EA667E /* particle in Resources */,
 				73288CF11A78B29000341D79 /* image in Resources */,
 				46880B7C19C43A67006E1F66 /* CloseNormal.png in Resources */,
+				73D0E49B1AE8CB7000FF3C97 /* sound in Resources */,
 				46880B7E19C43A67006E1F66 /* CloseSelected.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -816,6 +828,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				73F51FF91AD93E3200EB8D89 /* CallbackTest.cpp in Sources */,
+				73D0E4A01AE8CB9D00FF3C97 /* SoundTest.cpp in Sources */,
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				73DDB08C1A87C1D000C49E66 /* MyShip.cpp in Sources */,
 				73375D9B1AD5875B00A66DCA /* MainGameLayer.cpp in Sources */,
@@ -894,6 +907,7 @@
 				73ABF9F11A79C9C9007BDCA7 /* BulletTest.cpp in Sources */,
 				731FB2381A83E04B004C56D7 /* Constants.cpp in Sources */,
 				73288CC31A78B04400341D79 /* ExampleTest.cpp in Sources */,
+				73D0E4A11AE8CB9D00FF3C97 /* SoundTest.cpp in Sources */,
 				73288CE01A78B04C00341D79 /* TDDData.cpp in Sources */,
 				731FB2401A845B91004C56D7 /* EnemyShip.cpp in Sources */,
 				735C91811AE8733000707ECB /* GameData.cpp in Sources */,
