@@ -26,15 +26,15 @@ Scene* MainGameLayer::createScene()
 {
 	// 'scene' is an autorelease object
 	auto scene = Scene::create();
-	
+
 	// 'layer' is an autorelease object
 	MainGameLayer *layer = MainGameLayer::create();
-	
+
 	// add layer as a child to scene
 	scene->addChild(layer);
-	
+
 	layer->startLevel(1);
-	
+
 	// return the scene
 	return scene;
 }
@@ -51,19 +51,19 @@ bool MainGameLayer::init()
 	}
 	mWorld = nullptr;
 	mDialog = nullptr;
-	
+
 	mCurrentLevel = 1;
 
 	// Setup UI
 	Node *rootNode = CSLoader::createNode("MainGameLayer.csb");
 	addChild(rootNode);
 	setupUI(rootNode);
-	
+
 	setupWorld();	// should be after setupUI
-	
-	
+
+
 	mIsGameOver = true;
-	
+
 	//
 	setScore(0);
 	setLife(PLAYER_LIFE);
@@ -80,20 +80,20 @@ bool MainGameLayer::init()
 void MainGameLayer::setupUI(cocos2d::Node *mainPanel)
 {
 	Node *node;
-	
+
 	// Bind node to corresponding class variable
 	node = mainPanel->getChildByName("lifeText");
 	mLifeText = (Text *)node;
-	
+
 	node = mainPanel->getChildByName("scoreText");
 	mScoreText = (Text *)node;
-	
+
 	node = mainPanel->getChildByName("levelText");
 	mLevelText = (Text *)node;
-	
+
 	node = mainPanel->getChildByName("worldPanel");
 	mWorldPanel = (Text *)node;
-	
+
 }
 
 void MainGameLayer::setupWorld()
@@ -102,13 +102,13 @@ void MainGameLayer::setupWorld()
 		log("setupWorld: mWorldPanel is null");
 		return;
 	}
-	
+
 	mWorld = World::instance();
 	mWorld->reset();
 	mWorld->setCallback(CC_CALLBACK_2(MainGameLayer::handleCallback, this));
-	
+
 	mWorldPanel->addChild(mWorld);
-	
+
 	mWorld->scheduleUpdate();
 	mWorld->spawnMyShip();
 }
@@ -122,7 +122,7 @@ void MainGameLayer::setLife(int life)
 
 	char temp[20];
 	sprintf(temp, "x %d", mLife);
-	
+
 	mLifeText->setString(temp);
 }
 
@@ -132,12 +132,12 @@ void MainGameLayer::setScore(int score)
 	if(mScoreText == NULL) {
 		return;
 	}
-	
+
 	char temp[30];
 	sprintf(temp, "%d", mScore);
-	
+
 	mScoreText->setString(temp);
-	
+
 }
 
 void MainGameLayer::hideLevelBanner()
@@ -145,7 +145,7 @@ void MainGameLayer::hideLevelBanner()
 	if(mLevelText == NULL) {
 		return;
 	}
-	
+
 	mLevelText->setVisible(false);
 }
 
@@ -154,7 +154,7 @@ void MainGameLayer::showLevelBanner()
 	if(mLevelText == NULL) {
 		return;
 	}
-	
+
 	char temp[30];
 	sprintf(temp, "Level %d", mCurrentLevel);
 
@@ -165,18 +165,18 @@ void MainGameLayer::showLevelBanner()
 	auto fadeIn = FadeIn::create(1.0f);
 	auto delay = DelayTime::create(1.5f);
 	auto fadeOut = FadeOut::create(0.5f);
-	
+
 	World *world = mWorld;
 	auto startWorld = CallFunc::create([world](){
 		world->startWorld();
 	});
-	
+
 	//
 	auto seq = Sequence::create(fadeIn, delay, fadeOut, startWorld, nullptr);
 	mLevelText->setOpacity(0);
 	mLevelText->runAction(seq);
 
-	
+
 }
 
 void MainGameLayer::startLevel(int level)
@@ -185,29 +185,29 @@ void MainGameLayer::startLevel(int level)
 		log("error: mWorld is null");
 		return;
 	}
-	
+
 	if(level == 1) {
 		setScore(0);
 	}
-	
+
 	mIsGameOver = false;
-	
+
 	mCurrentLevel = level;
-	
+
 	mWorld->generateLevel(mCurrentLevel);
 	showLevelBanner();
-	
-	
+
+
 }
 
 void MainGameLayer::handlePlayerDie()
 {
 	int newLife = mLife - 1;
-	
+
 	if(newLife < 0) {	newLife = 0; }
-	
+
 	setLife(newLife);
-	
+
 	if(newLife > 0) {
 		mWorld->spawnMyShip();
 	} else {
@@ -220,7 +220,7 @@ void MainGameLayer::handlePlayerDie()
 void MainGameLayer::increaseScore(int addScore)
 {
 	int newScore = mScore + addScore;
-	
+
 	setScore(newScore);
 }
 
@@ -235,14 +235,14 @@ void MainGameLayer::handleCallback(Ref *ref, World::WorldEvent event)
 	if(mIsGameOver) {		// No need to handle any if game is overed
 		return;
 	}
-	
+
 	switch(event) {
 		case World::WorldEvent::PlayerDie:
 		{
 			handlePlayerDie();
 			break;
 		}
-			
+
 		case World::WorldEvent::HitMonster1:
 		{
 			increaseScore(SCORE1);
@@ -254,7 +254,7 @@ void MainGameLayer::handleCallback(Ref *ref, World::WorldEvent event)
 			increaseScore(SCORE2);
 			break;
 		}
-			
+
 		case World::WorldEvent::LevelClear:
 		{
 			startNewLevel();
@@ -266,12 +266,12 @@ void MainGameLayer::handleCallback(Ref *ref, World::WorldEvent event)
 void MainGameLayer::showGameOverDialog()
 {
 	GameOverDialog *dialog = GameOverDialog::create();
-	
+
 	addChild(dialog);
-	
+
 	dialog->setOKListener(CC_CALLBACK_1(MainGameLayer::onOK, this));
 	dialog->setCancelListener(CC_CALLBACK_1(MainGameLayer::onCancel, this));
-	
+
 	mDialog = dialog;
 }
 
@@ -279,15 +279,15 @@ void MainGameLayer::showGameOverDialog()
 void MainGameLayer::onOK(Ref *sender)
 {
 	log("OK button is clicked");
-	
+
 	if(mDialog != nullptr) {
 		mDialog->removeFromParent();
 	}
-	
+
 	setLife(PLAYER_LIFE);
 	startLevel(1);
-	
-	
+
+
 }
 
 void MainGameLayer::onCancel(Ref *sender)
@@ -295,4 +295,3 @@ void MainGameLayer::onCancel(Ref *sender)
 	log("Cancel button is clicked");
 	Director::getInstance()->popToRootScene();
 }
-

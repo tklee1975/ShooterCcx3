@@ -1,6 +1,6 @@
 //
 //  GameOverDialog.cpp
-//  Shooter
+//  TapToJump
 //
 //  Created by Ken Lee on 19/4/15.
 //

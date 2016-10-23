@@ -1,13 +1,13 @@
 //
 //  GameOverDialog.h
-//  Shooter
+//  TapToJump
 //
 //  Created by Ken Lee on 19/4/15.
 //
 //
 
-#ifndef __Shooter__GameOverDialog__
-#define __Shooter__GameOverDialog__
+#ifndef __TapToJump__GameOverDialog__
+#define __TapToJump__GameOverDialog__
 
 #include <stdio.h>
 #include "cocos2d.h"
@@ -43,4 +43,4 @@ private:
 	Text *mLastScoreText;
 };
 
-#endif /* defined(__Shooter__GameOverDialog__) */
+#endif /* defined(__TapToJump__GameOverDialog__) */

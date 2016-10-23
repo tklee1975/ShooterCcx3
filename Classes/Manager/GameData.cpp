@@ -1,6 +1,6 @@
 //
 //  GameData.cpp
-//  Shooter
+//  TapToJump
 //
 //  Created by Ken Lee on 23/4/15.
 //
